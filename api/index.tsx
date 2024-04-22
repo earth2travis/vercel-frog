@@ -2,7 +2,7 @@ import { Frog } from 'frog';
 import { Column, Columns, Row, Rows, Heading, Text, vars } from './ui.js';
 import { devtools } from 'frog/dev';
 import { serveStatic } from 'frog/serve-static';
-// import { neynar } from 'frog/hubs'
+import { neynar } from 'frog/hubs';
 import { handle } from 'frog/vercel';
 
 // Uncomment to use Edge Runtime.
@@ -11,11 +11,17 @@ import { handle } from 'frog/vercel';
 // }
 
 export const app = new Frog({
+  origin: 'https://frames.yeet.haus/',
   assetsPath: '/',
   basePath: '/api',
+  hub: neynar({ apiKey: process.env.NEYNAR_KEY || '' }),
+  browserLocation: 'https://app.yeet.haus/',
+  verify: 'silent',
   ui: { vars },
-  // Supply a Hub to enable frame verification.
-  // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+  initialState: {
+    minTribute: '0',
+    shamanAddress: '',
+  },
 });
 
 app.frame('/', c => {
