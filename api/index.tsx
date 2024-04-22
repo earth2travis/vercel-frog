@@ -14,7 +14,11 @@ export const app = new Frog({
   assetsPath: '/',
   basePath: '/api',
   ui: { vars },
-}).frame('/', c => {
+  // Supply a Hub to enable frame verification.
+  // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+});
+
+app.frame('/', c => {
   return c.res({
     image: (
       <Box
