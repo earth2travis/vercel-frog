@@ -1,5 +1,5 @@
 import { Frog } from 'frog';
-import { Box, Heading, Text, VStack, vars } from './ui.js';
+import { Column, Columns, Row, Rows, Heading, Text, vars } from './ui.js';
 import { devtools } from 'frog/dev';
 import { serveStatic } from 'frog/serve-static';
 // import { neynar } from 'frog/hubs'
@@ -21,19 +21,108 @@ export const app = new Frog({
 app.frame('/', c => {
   return c.res({
     image: (
-      <Box
-        grow
-        alignHorizontal="center"
-        backgroundColor="background"
-        padding="32"
-      >
-        <VStack gap="4">
-          <Heading>FrogUI 🐸</Heading>
-          <Text color="text200" size="20">
-            Build consistent frame experiences
-          </Text>
-        </VStack>
-      </Box>
+      <Rows grow>
+        <Row
+          backgroundColor="death"
+          color="nipple"
+          textTransform="uppercase"
+          borderTopColor={'angel'}
+          borderTopWidth={'4'}
+          borderRightColor={'angel'}
+          borderRightWidth={'4'}
+          borderLeftColor={'angel'}
+          borderLeftWidth={'4'}
+          height="1/5"
+        >
+          <Columns grow>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/6">
+              <Heading>Yeet</Heading>
+            </Column>
+          </Columns>
+        </Row>
+        <Row
+          backgroundColor="nipple"
+          borderTopColor={'angel'}
+          borderTopWidth={'2'}
+          borderRightColor={'angel'}
+          borderRightWidth={'4'}
+          borderBottomColor={'angel'}
+          borderBottomWidth={'2'}
+          borderLeftColor={'angel'}
+          borderLeftWidth={'4'}
+          height="3/5"
+        >
+          <Columns grow>
+            <Column
+              backgroundColor="death"
+              color="angel"
+              textAlign="center"
+              textTransform="uppercase"
+              alignHorizontal="center"
+              alignVertical="center"
+              paddingRight="12"
+              paddingLeft="12"
+              width="1/1"
+            >
+              <Heading wrap="balance">Yeeter Not Active</Heading>
+            </Column>
+          </Columns>
+        </Row>
+        <Row
+          backgroundColor="death"
+          color="angel"
+          textTransform="uppercase"
+          borderRightColor={'angel'}
+          borderRightWidth={'4'}
+          borderBottomColor={'angel'}
+          borderBottomWidth={'4'}
+          borderLeftColor={'angel'}
+          borderLeftWidth={'4'}
+          height="1/5"
+        >
+          <Columns grow>
+            <Column alignHorizontal="center" alignVertical="center" width="1/4">
+              <Heading size="18">Goal</Heading>
+              <Text size="18" weight="400">
+                xxx
+              </Text>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/4">
+              <Heading size="18">Raised</Heading>
+              <Text size="18" weight="400">
+                xxx
+              </Text>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/4">
+              <Heading size="18">Ends</Heading>
+              <Text size="18" weight="400">
+                xxx
+              </Text>
+            </Column>
+            <Column alignHorizontal="center" alignVertical="center" width="1/4">
+              <Heading size="18">Tribute</Heading>
+              <Text size="18" weight="400">
+                xxx
+              </Text>
+            </Column>
+          </Columns>
+        </Row>
+      </Rows>
     ),
   });
 });
